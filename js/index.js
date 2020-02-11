@@ -46,12 +46,12 @@ letsGo.addEventListener('click', () => {
   letsGo.textContent = "Let's Gooooooo!";
   letsGoIMG.style.transition = '0.3s', 'ease-in';
   letsGoIMG.style.transform = 'rotate(1080deg) scale(0.1)';
-  letsGoIMG.style.borderRadius = '5px';
 });
 
 // Event Listener 7
 letsGoIMG.addEventListener('mouseleave', () => {
-  letsGoIMG.style.transform = 'scale(1)';
+  letsGoIMG.style.transition = '0.3s', 'ease-in';
+  letsGoIMG.style.transform = 'rotate(0deg) scale(1)';
 })
 
 // Event Listener 8
@@ -95,3 +95,18 @@ contPick.addEventListener('click', () => {
   event.stopPropagation();
   contPick.removeChild(byebye);
 });
+
+// Stretch
+const adventAwaits = document.querySelector('.img-fluid');
+
+adventAwaits.addEventListener('click', () => {
+  event.stopPropagation();
+  gsap.to('.img-fluid', {
+    duration: 1,
+    rotateX: 180,
+    ease: "bounce.out",
+    y: 200,
+    yoyo: true,
+    repeat: 1
+  })
+})
